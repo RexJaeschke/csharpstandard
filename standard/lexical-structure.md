@@ -12,7 +12,7 @@ Conceptually speaking, a program is compiled using three steps:
 
 Conforming implementations shall accept Unicode compilation units encoded with the UTF-8 encoding form (as defined by the Unicode standard), and transform them into a sequence of Unicode characters. Implementations can choose to accept and transform additional character encoding schemes (such as UTF-16, UTF-32, or non-Unicode character mappings).
 
-> *Note*: The handling of the Unicode NULL character (U+0000) is implementation-specific. It is strongly recommended that developers avoid using this character in their source code, for the sake of both portability and readability. When the character is required within a character or string literal, the escape sequences `\0` or `\u0000` may be used instead. *end note*
+> *Note*: The handling of the Unicode NULL character (U+0000) is implementation-defined. It is strongly recommended that developers avoid using this character in their source code, for the sake of both portability and readability. When the character is required within a character or string literal, the escape sequences `\0` or `\u0000` may be used instead. *end note*
 <!-- markdownlint-disable MD028 -->
 
 <!-- markdownlint-enable MD028 -->
@@ -1078,8 +1078,8 @@ The following pre-processing directives are available:
 - `#line`, which is used to control line numbers emitted for errors and warnings ([§6.5.8](lexical-structure.md#658-line-directives)).
 - `#error`, which is used to issue errors ([§6.5.6](lexical-structure.md#656-diagnostic-directives)).
 - `#region` and `#endregion`, which are used to explicitly mark sections of source code ([§6.5.7](lexical-structure.md#657-region-directives)).
-- `#pragma`, which is used to specify optional contextual information to a compiler ([§6.5.10](lexical-structure.md#6510-pragma-directives)).
 - `#nullable`, which is used to specify the nullable context ([§6.5.9](lexical-structure.md#659-nullable-directive)).
+- `#pragma`, which is used to specify optional contextual information to a compiler ([§6.5.10](lexical-structure.md#6510-pragma-directives)).
 
 A pre-processing directive always occupies a separate line of source code and always begins with a `#` character and a pre-processing directive name. White space may occur before the `#` character and between the `#` character and the directive name.
 
