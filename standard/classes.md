@@ -5528,10 +5528,10 @@ A type having an instance indexer taking a single argument of type `System.Index
 
 #### §indexable-sequence-impl-support-for-index Implicit Index support
 
-An implementation shall behave as if it provides an instance indexer member with a single parameter of type `System.Index` for any type that meets the following criteria:
+An implementation shall behave as if it provides a non-virtual instance indexer member with a single parameter of type `System.Index` for any type that meets the following criteria:
 
 - The type is countable ([§15.7.1](classes.md#1571-general)).
-- The type has an accessible instance indexer taking an argument of type `int` as its only argument, or as its first argument with the remaining arguments being optional.
+- The type has an accessible instance indexer taking an argument of type `int` as its only argument.
 - The type does not have an accessible instance indexer taking a `System.Index` as its only argument, or as its first argument with the remaining arguments being optional.
 
 The provided instance indexer shall have the same get and set members with matching accessibility as the `int` indexer.
@@ -5574,7 +5574,7 @@ A type having an instance indexer taking a single argument of type `System.Range
 
 #### §indexable-sequence-impl-support-for-range Implicit Range support
 
-An implementation shall behave as if it provides an instance indexer member with a single parameter of type `System.Range` for any type that meets the following criteria:
+An implementation shall behave as if it provides a non-virtual instance indexer member with a single parameter of type `System.Range` for any type that meets the following criteria:
 
 - The type is countable ([§15.7.1](classes.md#1571-general)).
 - The type has an accessible instance method named `Slice` taking two arguments of type `int` as the only arguments. For type `string`, the method `Substring` is used instead of `Slice`.
