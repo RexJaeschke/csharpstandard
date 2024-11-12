@@ -381,7 +381,7 @@ The list of requirements for valid combinations of modifiers stated for a class 
 - A sealed declaration that is not extern shall have a *block* as a *method_body*.
 - An async declaration shall have a *block* as a *method_body*.
 
-All formal parameter types of an interface method shall be input-safe ([§18.2.3.2](interfaces.md#18232-variance-safety)), and the return type shall be either `void` or output-safe. In addition, any output or reference formal parameter types shall also be output-safe.
+All parameter types of an interface method shall be input-safe ([§18.2.3.2](interfaces.md#18232-variance-safety)), and the return type shall be either `void` or output-safe. In addition, any output or reference parameter types shall also be output-safe.
 
 > *Note*: Output parameters are required to be input-safe due to common implementation restrictions. *end note*
 
@@ -558,7 +558,7 @@ Interface indexers are declared using *indexer_declaration*s ([§15.9](classes.m
 
 An *indexer_declaration* that has a *block* as an *accessor_body* is a default implementation ([§18.1](interfaces.md#181-general)), so it is *not* part of the interface’s contract.
 
-All the formal parameter types of an interface indexer shall be input-safe ([§18.2.3.2](interfaces.md#18232-variance-safety)). In addition, any output or reference formal parameter types shall also be output-safe.
+All the parameter types of an interface indexer shall be input-safe ([§18.2.3.2](interfaces.md#18232-variance-safety)). In addition, any output or reference parameter types shall also be output-safe.
 
 > *Note*: Output parameters are required to be input-safe due to common implementation restrictions. *end note*
 
@@ -609,7 +609,7 @@ It is an error to declare a class type, struct type, or enum type within the sco
 
 Interface members are accessed through member access ([§12.8.7](expressions.md#1287-member-access)) and indexer access ([§12.8.11.3](expressions.md#128113-indexer-access)) expressions of the form `I.M` and `I[A]`, where `I` is an interface type, `M` is a constant, field, method, property, or event of that interface type, and `A` is an indexer argument list.
 
-For interfaces that are strictly single-inheritance (each interface in the inheritance chain has exactly zero or one direct base interface), the effects of the member lookup ([§12.5](expressions.md#125-member-lookup)), method invocation ([§12.8.9.2](expressions.md#12892-method-invocations)), and indexer access ([§12.8.11.3](expressions.md#128113-indexer-access)) rules are exactly the same as for classes and structs: More derived members hide less derived members with the same name or signature. However, for multiple-inheritance interfaces, ambiguities can occur when two or more unrelated base interfaces declare members with the same name or signature. This subclause shows several examples, some of which lead to ambiguities and others which don’t. In all cases, explicit casts can be used to resolve the ambiguities.
+For interfaces that are strictly single-inheritance (each interface in the inheritance chain has exactly zero or one direct base interface), the effects of the member lookup ([§12.5](expressions.md#125-member-lookup)), method invocation ([§12.8.10.2](expressions.md#128102-method-invocations)), and indexer access ([§12.8.12.3](expressions.md#128123-indexer-access)) rules are exactly the same as for classes and structs: More derived members hide less derived members with the same name or signature. However, for multiple-inheritance interfaces, ambiguities can occur when two or more unrelated base interfaces declare members with the same name or signature. This subclause shows several examples, some of which lead to ambiguities and others which don’t. In all cases, explicit casts can be used to resolve the ambiguities.
 
 > *Example*: In the following code
 >
@@ -1113,10 +1113,10 @@ Members of a constructed interface type are considered to have any type paramete
 
 For purposes of interface mapping, a class or struct member `A` matches an interface member `B` when:
 
-- `A` and `B` are methods, and the name, type, and formal parameter lists of `A` and `B` are identical.
+- `A` and `B` are methods, and the name, type, and parameter lists of `A` and `B` are identical.
 - `A` and `B` are properties, the name and type of `A` and `B` are identical, and `A` has the same accessors as `B` (`A` is permitted to have additional accessors if it is not an explicit interface member implementation).
 - `A` and `B` are events, and the name and type of `A` and `B` are identical.
-- `A` and `B` are indexers, the type and formal parameter lists of `A` and `B` are identical, and `A` has the same accessors as `B` (`A` is permitted to have additional accessors if it is not an explicit interface member implementation).
+- `A` and `B` are indexers, the type and parameter lists of `A` and `B` are identical, and `A` has the same accessors as `B` (`A` is permitted to have additional accessors if it is not an explicit interface member implementation).
 
 Notable implications of the interface-mapping algorithm are:
 
