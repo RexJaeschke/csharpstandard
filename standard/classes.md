@@ -2130,7 +2130,7 @@ default_argument
 
 parameter_modifier
     : parameter_mode_modifier
-    | 'this'
+    | 'this' parameter_mode_modifier?
     ;
 
 parameter_mode_modifier
@@ -3056,6 +3056,7 @@ When the first parameter of a method includes the `this` modifier, that method i
 
 - It may only be an input parameter if it has a value type
 - It may only be a reference parameter if it has a value type or has a generic type constrained to struct
+- It shall not be an output parameter.
 - It shall not be a pointer type.
 
 > *Example*: The following is an example of a static class that declares two extension methods:
