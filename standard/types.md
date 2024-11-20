@@ -107,7 +107,7 @@ The `dynamic` type is further described in [§8.7](types.md#87-the-dynamic-type)
 
 ### 8.2.5 The string type
 
-The `string` type is a sealed class type that inherits directly from `object`. Instances of the `string` class represent a sequence of UTF-16 code units, whose endianness is implementation-defined.
+The `string` type is a sealed class type that inherits directly from `object`. Instances of the `string` class represent a sequence of UTF-16 code units.
 
 Values of the `string` type can be written as string literals ([§6.4.5.6](lexical-structure.md#6456-string-literals)).
 
